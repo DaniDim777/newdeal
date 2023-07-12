@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<allCompanies>
+    <company id="1">
+        <title>Apple</title>
+        <creationDate>1989-02-07</creationDate>
+        <isOpened>true</isOpened>
+        <employees>
+            <employee id="2">
+                <name>Alexey</name>
+                <birthday>1989-10-11</birthday>
+            </employee>
+            <employee id="3">
+                <name>Valeriy</name>
+                <birthday>1992-12-29</birthday>
+            </employee>
+            <employee id="4">
+                <name>Max</name>
+                <birthday>1999-06-08</birthday>
+            </employee>
+        </employees>
+    </company>
+    <company id="2">
+        <title>Mars</title>
+        <creationDate>1989-10-11</creationDate>
+        <isOpened>false</isOpened>
+        <employees/>
+    </company>
+    <company id="3">
+        <title>BMW</title>
+        <creationDate>1903-12-29</creationDate>
+        <isOpened>true</isOpened>
+        <employees>
+            <employee id="4">
+                <name>Max</name>
+                <birthday>1999-06-08</birthday>
+            </employee>
+            <employee id="5">
+                <name>Yuriy</name>
+                <birthday>1989-10-11</birthday>
+            </employee>
+        </employees>
+    </company>
+    <company id="4">
+        <title>Microsoft</title>
+        <creationDate>1970-06-08</creationDate>
+        <isOpened>false</isOpened>
+        <employees/>
+    </company>
+</allCompanies>
