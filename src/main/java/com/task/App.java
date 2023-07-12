@@ -80,13 +80,24 @@ import java.util.stream.Collectors;
  * смотря что тестировать, сделать конфигурацию теста если надо поднять контекст, либо через юнит-тестирование,
  * создать объекты, добавить данные, выполнить некоторое необходимое действие с объектами
  * и сравнить фактический результат с ожидаемым
+ *
+ * Выбрал jaxb проверить как он работает опыта не было, можно было бы xstream, через dom слишком объемно
  */
 public class App {
     public static void main(String[] args) {
+        /**
+         * метод для создания файла xml
+         */
         serializeToXML();
+        /**
+         * метод для получения данных из файла xml
+         */
         deserializeFromXML();
     }
 
+    /**
+     * метод для сериализации объектов java в файл xml
+     */
     public static void serializeToXML() {
         try {
             ArrayList<Company> companies = new ArrayList<>();
@@ -108,11 +119,17 @@ public class App {
             AllCompanies newList = new AllCompanies();
             newList.setDataComp(companies);
 
+            /**
+             * создание контекста jaxb и маршаллера для сериализации объектов java в файл xml
+             */
             JAXBContext jaxbContext = JAXBContext.newInstance(AllCompanies.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(newList, new File("serialized.xml"));
 
+            /**
+             * создание файла xsd
+             */
             File xsdFile = new File("serialized.xsd");
             try {
                 jaxbContext.generateSchema(new SchemaOutputResolver() {
@@ -131,6 +148,9 @@ public class App {
         }
     }
 
+    /**
+     * общий класс для работы с коллекцией
+     */
     @XmlRootElement
     public static class AllCompanies {
         private ArrayList<Company> dataComp;
@@ -145,6 +165,9 @@ public class App {
         }
     }
 
+    /**
+     * метод для десериализации из файла xml в объекты java
+     */
     public static void deserializeFromXML() {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(AllCompanies.class);

@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * класс для создания объекта организация
+ */
 @XmlRootElement(name = "company")
 @XmlAccessorType(XmlAccessType.FIELD)
 @NoArgsConstructor
